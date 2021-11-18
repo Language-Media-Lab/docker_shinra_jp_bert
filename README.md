@@ -10,23 +10,27 @@ nvideaが提供しているPytorchイメージ
 https://ngc.nvidia.com/catalog/containers/nvidia:pytorch
 
 ## パッケージ
-- pytorch
+- torch=1.9.1
 - gensim
-- MeCab
+- MeCab=0.996.3
   -  mecab-python3
   -  mecab-ipadic-neologd
   -  neologdn
 - numpy
 - optuna
 - pandas
+- mojimoji=0.0.11
 - matplotlib
-- scikit-learn
+- scikit-learn=1.0
+- scipy=1.7.1
 - seaborn
-- transformers
+- transformers=2.11.0
 - fugashi
 - tqdm
 - apex
-- seqeval
+- threadpoolctl=3.0.0
+- seqeval=1.2.2
+- tensorboard=2.6.0
 - mlflow
 
 # 実際にコンテナを起動してみる
@@ -61,7 +65,7 @@ docker build --rm -t pytorch_env:latest .
 ```
 ## コンテナを作成&起動：runコマンド
 ```
-docker run -it -v $PWD:/home/workspase --name pytorch_container pytorch_env:latest /bin/bash
+docker run -it -v /home:/home --name pytorch_container pytorch_env:latest /bin/bash
 ```
 上記コマンドを打つと自動的にコンテナ内に入ってくれます．  
 

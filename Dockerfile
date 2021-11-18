@@ -27,12 +27,18 @@ RUN apt-get update  && \
 
 
 # 作業するディレクトリを変更
-WORKDIR /home/workspase
+WORKDIR /home/
 
 COPY requirements.txt ${PWD}
 
 # pythonのパッケージをインストール
 RUN pip install -r requirements.txt
+
+# pytorchのバージョン指定
+RUN pip3 install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
+
+# mecabrcをコピー
+RUN cp /etc/mecabrc /usr/local/etc/mecabrc
 
 # 作業するディレクトリを変更
 # コンテナの内部には入った際のディレクトリの位置を変更している
