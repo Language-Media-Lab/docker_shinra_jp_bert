@@ -1,5 +1,5 @@
-# Docker Pytorch環境構築
-Pytorchでの日本語自然言語処理の分析環境を用意するための Docker ファイル
+# Docker Shinra_jp_bert 環境構築
+https://github.com/Language-Media-Lab/shinra_jp_bert で使用したDocker環境
 
 ## バージョン
 ```
